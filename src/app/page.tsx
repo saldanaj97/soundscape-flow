@@ -1,6 +1,6 @@
-import { ControlSection } from "@/features/controls/ControlSection";
-import Header from "@/features/Header";
-import { SoundSelectionSection } from "@/features/SoundSelectionSection";
+import { ControlSection } from "@/components/shared/controls/ControlSection";
+import Header from "@/components/shared/Header";
+import { SoundSelectionSection } from "@/components/shared/SoundSelectionSection";
 
 export default function Page() {
   return (

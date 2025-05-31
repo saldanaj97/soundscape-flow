@@ -18,7 +18,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { useTimer } from "@/hooks/useTimer";
-import { calculateTotalSeconds, formatTimeDisplay } from "@/utils/time";
+import { calculateTotalSeconds, formatTimeDisplay } from "@/lib/utils/time";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { ClockFading, Pause, Play, RefreshCcw } from "lucide-react";
 import { useCallback, useEffect } from "react";

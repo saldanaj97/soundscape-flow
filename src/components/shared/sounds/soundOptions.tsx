@@ -29,7 +29,7 @@ export const noiseSoundOptions = [
 
 export const rainSoundOptions = [
   {
-    id: 1,
+    id: 4,
     name: "Light Rain",
     icon: <Waves />,
     bgColor: "bg-blue-200",
@@ -37,7 +37,7 @@ export const rainSoundOptions = [
     status: "Paused",
   },
   {
-    id: 2,
+    id: 5,
     name: "Heavy Rain",
     icon: <Waves />,
     bgColor: "bg-blue-300",
@@ -45,7 +45,7 @@ export const rainSoundOptions = [
     status: "Paused",
   },
   {
-    id: 3,
+    id: 6,
     name: "Rain on Tent",
     icon: <Waves />,
     bgColor: "bg-blue-500",
@@ -53,7 +53,7 @@ export const rainSoundOptions = [
     status: "Paused",
   },
   {
-    id: 4,
+    id: 7,
     name: "Rain on Window",
     icon: <Waves />,
     bgColor: "bg-blue-400",
@@ -61,7 +61,7 @@ export const rainSoundOptions = [
     status: "Paused",
   },
   {
-    id: 5,
+    id: 8,
     name: "Rain on Leaves",
     icon: <Waves />,
     bgColor: "bg-green-300",
@@ -69,7 +69,7 @@ export const rainSoundOptions = [
     status: "Paused",
   },
   {
-    id: 6,
+    id: 9,
     name: "Thunderstorm",
     icon: <Waves />,
     bgColor: "bg-gray-400",
@@ -80,7 +80,7 @@ export const rainSoundOptions = [
 
 export const natureSoundOptions = [
   {
-    id: 1,
+    id: 10,
     name: "Forest",
     icon: <Waves />,
     bgColor: "bg-green-200",
@@ -88,7 +88,7 @@ export const natureSoundOptions = [
     status: "Paused",
   },
   {
-    id: 2,
+    id: 11,
     name: "Ocean Waves",
     icon: <Waves />,
     bgColor: "bg-blue-200",
@@ -96,7 +96,7 @@ export const natureSoundOptions = [
     status: "Paused",
   },
   {
-    id: 3,
+    id: 12,
     name: "Birds Chirping",
     icon: <Waves />,
     bgColor: "bg-yellow-200",
@@ -104,7 +104,7 @@ export const natureSoundOptions = [
     status: "Paused",
   },
   {
-    id: 4,
+    id: 13,
     name: "Wind in Trees",
     icon: <Waves />,
     bgColor: "bg-green-300",
@@ -112,7 +112,7 @@ export const natureSoundOptions = [
     status: "Paused",
   },
   {
-    id: 5,
+    id: 14,
     name: "Nightime Ambience",
     icon: <Waves />,
     bgColor: "bg-gray-300",
@@ -120,7 +120,7 @@ export const natureSoundOptions = [
     status: "Paused",
   },
   {
-    id: 6,
+    id: 15,
     name: "Mountain Stream",
     icon: <Waves />,
     bgColor: "bg-blue-300",
@@ -128,7 +128,7 @@ export const natureSoundOptions = [
     status: "Paused",
   },
   {
-    id: 7,
+    id: 16,
     name: "Campfire",
     icon: <Waves />,
     bgColor: "bg-gray-200",

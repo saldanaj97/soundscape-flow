@@ -1,5 +1,17 @@
+import {
+  natureSoundOptions,
+  noiseSoundOptions,
+  rainSoundOptions,
+} from "@/components/shared/sounds/soundOptions";
+import { SoundProvider } from "@/context/SoundContext";
 import { Toaster } from "sonner";
 import "../globals.css";
+
+const allSounds = [
+  ...noiseSoundOptions,
+  ...rainSoundOptions,
+  ...natureSoundOptions,
+];
 
 export default function RootLayout({
   children,
@@ -9,8 +21,10 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className="min-h-screen font-sans">
-        <main>{children}</main>
-        <Toaster />
+        <SoundProvider initialSounds={allSounds}>
+          <main>{children}</main>
+          <Toaster />
+        </SoundProvider>
       </body>
     </html>
   );

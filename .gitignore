@@ -32,6 +32,7 @@ src-tauri/Cargo.lock
 *.njsproj
 *.sln
 *.sw?
+.github/instructions
 
 # ───── Environment Variables ─────
 .env

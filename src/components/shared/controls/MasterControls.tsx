@@ -3,6 +3,7 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Slider } from "@/components/ui/slider";
+import { useSoundContext } from "@/context/SoundContext";
 import {
   Headphones,
   Pause,
@@ -14,8 +15,9 @@ import {
 import { useState } from "react";
 
 export const MasterControls = () => {
+  const { sounds, setAllPlaying } = useSoundContext();
   const [volume, setVolume] = useState(50);
-  const [isPlaying, setIsPlaying] = useState(false);
+  const isPlaying = sounds.some((s) => s.isPlaying);
 
   const handleVolumeChange = (value: number[]) => {
     setVolume(value[0]);
@@ -30,7 +32,7 @@ export const MasterControls = () => {
   };
 
   const handlePlayPauseToggle = () => {
-    setIsPlaying((prev) => !prev);
+    setAllPlaying(!isPlaying);
   };
 
   return (

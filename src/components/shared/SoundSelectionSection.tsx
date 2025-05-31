@@ -1,5 +1,5 @@
+import Sounds from "@/components/shared/sounds/Sounds";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import Sounds from "@/features/sounds/Sounds";
 import {
   natureSoundOptions,
   noiseSoundOptions,
