@@ -13,28 +13,27 @@ import { Toggle } from "@/components/ui/toggle";
 import { useSoundContext } from "@/context/SoundContext";
 import { SoundOption } from "@/types/sounds.types";
 import { Pause, Play, Volume2, VolumeX } from "lucide-react";
-import { useState } from "react";
 
 const SoundCards = ({ sound }: { sound: SoundOption }) => {
-  const { sounds, toggleSound } = useSoundContext();
-  const [volume, setVolume] = useState(50);
+  const { sounds, dispatch } = useSoundContext();
   const soundState = sounds.find((s) => s.id === sound.id);
   const playing = soundState?.isPlaying ?? false;
+  const volume = soundState?.volume ?? 100;
 
   const handlePlayPause = () => {
-    toggleSound(sound.id);
+    dispatch({ type: "TOGGLE_SOUND", id: sound.id });
   };
 
   const handleVolumeChange = (value: number[]) => {
-    setVolume(value[0]);
+    dispatch({ type: "SET_VOLUME", id: sound.id, volume: value[0] });
   };
 
   const handleMuteVolume = () => {
-    setVolume(0);
+    dispatch({ type: "MUTE_SOUND", id: sound.id, isMuted: true });
   };
 
   const handleMaxVolume = () => {
-    setVolume(100);
+    dispatch({ type: "SET_VOLUME", id: sound.id, volume: 100 });
   };
 
   return (

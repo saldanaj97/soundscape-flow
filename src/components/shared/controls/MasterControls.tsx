@@ -12,27 +12,28 @@ import {
   Volume2,
   VolumeX,
 } from "lucide-react";
-import { useState } from "react";
 
 export const MasterControls = () => {
-  const { sounds, setAllPlaying } = useSoundContext();
-  const [volume, setVolume] = useState(50);
+  const { sounds, dispatch } = useSoundContext();
+  // Master volume is the minimum of all sound volumes, or 100 if all are 100
+  const masterVolume =
+    sounds.length > 0 ? Math.min(...sounds.map((s) => s.volume)) : 100;
   const isPlaying = sounds.some((s) => s.isPlaying);
 
   const handleVolumeChange = (value: number[]) => {
-    setVolume(value[0]);
+    dispatch({ type: "SET_MASTER_VOLUME", volume: value[0] });
   };
 
   const handleMuteVolume = () => {
-    setVolume(0);
+    dispatch({ type: "SET_MASTER_VOLUME", volume: 0 });
   };
 
   const handleMaxVolume = () => {
-    setVolume(100);
+    dispatch({ type: "SET_MASTER_VOLUME", volume: 100 });
   };
 
   const handlePlayPauseToggle = () => {
-    setAllPlaying(!isPlaying);
+    dispatch({ type: "SET_ALL_PLAYING", playing: !isPlaying });
   };
 
   return (
@@ -46,7 +47,9 @@ export const MasterControls = () => {
         <div className="flex w-full flex-col gap-2">
           <div className="flex w-full items-center justify-between">
             <p className="text-sm text-neutral-500">Master Volume</p>
-            <p className="text-sm font-semibold text-neutral-500">{volume}%</p>
+            <p className="text-sm font-semibold text-neutral-500">
+              {masterVolume}%
+            </p>
           </div>
           <div className="flex w-full items-center justify-evenly gap-2">
             <Button
@@ -57,7 +60,7 @@ export const MasterControls = () => {
               <VolumeX className="text-neutral-500" />
             </Button>
             <Slider
-              value={[volume]}
+              value={[masterVolume]}
               onValueChange={handleVolumeChange}
               max={100}
               step={1}

@@ -7,4 +7,14 @@ export type SoundOption = {
   bgColor: string;
 };
 
+export type SoundState = {
+  id: number;
+  name: string;
+  isPlaying: boolean;
+  volume: number; // 0-100
+  isMuted: boolean;
+  mixLevel: number;
+  presetId?: string;
+};
+
 export type SoundCategory = "rain" | "nature" | "whiteNoise";
