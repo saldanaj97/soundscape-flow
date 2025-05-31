@@ -1,0 +1,138 @@
+import { Waves } from "lucide-react";
+
+export const noiseSoundOptions = [
+  {
+    id: 1,
+    name: "White Noise",
+    icon: <Waves />,
+    bgColor: "bg-gray-200",
+    iconColor: "text-white",
+    status: "Paused",
+  },
+  {
+    id: 2,
+    name: "Pink Noise",
+    icon: <Waves />,
+    bgColor: "bg-pink-200",
+    iconColor: "text-white",
+    status: "Paused",
+  },
+  {
+    id: 3,
+    name: "Brown Noise",
+    icon: <Waves />,
+    bgColor: "bg-yellow-900",
+    iconColor: "text-white",
+    status: "Paused",
+  },
+];
+
+export const rainSoundOptions = [
+  {
+    id: 1,
+    name: "Light Rain",
+    icon: <Waves />,
+    bgColor: "bg-blue-200",
+    iconColor: "text-white",
+    status: "Paused",
+  },
+  {
+    id: 2,
+    name: "Heavy Rain",
+    icon: <Waves />,
+    bgColor: "bg-blue-300",
+    iconColor: "text-white",
+    status: "Paused",
+  },
+  {
+    id: 3,
+    name: "Rain on Tent",
+    icon: <Waves />,
+    bgColor: "bg-blue-500",
+    iconColor: "text-white",
+    status: "Paused",
+  },
+  {
+    id: 4,
+    name: "Rain on Window",
+    icon: <Waves />,
+    bgColor: "bg-blue-400",
+    iconColor: "text-white",
+    status: "Paused",
+  },
+  {
+    id: 5,
+    name: "Rain on Leaves",
+    icon: <Waves />,
+    bgColor: "bg-green-300",
+    iconColor: "text-white",
+    status: "Paused",
+  },
+  {
+    id: 6,
+    name: "Thunderstorm",
+    icon: <Waves />,
+    bgColor: "bg-gray-400",
+    iconColor: "text-white",
+    status: "Paused",
+  },
+];
+
+export const natureSoundOptions = [
+  {
+    id: 1,
+    name: "Forest",
+    icon: <Waves />,
+    bgColor: "bg-green-200",
+    iconColor: "text-white",
+    status: "Paused",
+  },
+  {
+    id: 2,
+    name: "Ocean Waves",
+    icon: <Waves />,
+    bgColor: "bg-blue-200",
+    iconColor: "text-white",
+    status: "Paused",
+  },
+  {
+    id: 3,
+    name: "Birds Chirping",
+    icon: <Waves />,
+    bgColor: "bg-yellow-200",
+    iconColor: "text-white",
+    status: "Paused",
+  },
+  {
+    id: 4,
+    name: "Wind in Trees",
+    icon: <Waves />,
+    bgColor: "bg-green-300",
+    iconColor: "text-white",
+    status: "Paused",
+  },
+  {
+    id: 5,
+    name: "Nightime Ambience",
+    icon: <Waves />,
+    bgColor: "bg-gray-300",
+    iconColor: "text-white",
+    status: "Paused",
+  },
+  {
+    id: 6,
+    name: "Mountain Stream",
+    icon: <Waves />,
+    bgColor: "bg-blue-300",
+    iconColor: "text-white",
+    status: "Paused",
+  },
+  {
+    id: 7,
+    name: "Campfire",
+    icon: <Waves />,
+    bgColor: "bg-gray-200",
+    iconColor: "text-white",
+    status: "Paused",
+  },
+];
