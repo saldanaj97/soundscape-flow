@@ -1,4 +1,4 @@
-import { ControlSection } from "@/components/shared/controls/ControlSection";
+import { ControlSection } from "@/components/shared/ControlSection";
 import Header from "@/components/shared/Header";
 import { SoundSelectionSection } from "@/components/shared/SoundSelectionSection";
 

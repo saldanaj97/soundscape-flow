@@ -5,6 +5,7 @@ export type SoundOption = {
   icon: React.ReactNode;
   iconColor: string;
   bgColor: string;
+  ringColor: string;
 };
 
 export type SoundState = {
@@ -15,6 +16,7 @@ export type SoundState = {
   isMuted: boolean;
   mixLevel: number;
   presetId?: string;
+  selected: boolean;
 };
 
 export type SoundCategory = "rain" | "nature" | "whiteNoise";

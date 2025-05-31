@@ -298,7 +298,9 @@ export const TimerControls: React.FC<TimerControlsProps> = ({ className }) => {
     >
       <CardHeader className="flex w-full items-center justify-start">
         <ClockFading size={24} className="text-blue-500" aria-hidden="true" />
-        <h2 className="text-xl font-bold text-neutral-800">Timer</h2>
+        <h2 className="dark:text-foreground text-xl font-bold text-neutral-800">
+          Timer
+        </h2>
       </CardHeader>
       <CardContent className="flex w-full min-w-1/3 items-center justify-center">
         <Form {...form}>

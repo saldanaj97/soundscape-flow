@@ -1,5 +1,5 @@
-import { MasterControls } from "./MasterControls";
-import TimerControls from "./TimerControls";
+import MasterControls from "./controls/MasterControls";
+import TimerControls from "./controls/TimerControls";
 
 export const ControlSection = () => {
   return (

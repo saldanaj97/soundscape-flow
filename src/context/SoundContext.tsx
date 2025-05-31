@@ -1,7 +1,7 @@
 "use client";
 
-import { SoundOption, SoundState } from "@/types/sounds.types";
-import React, { createContext, ReactNode, useContext, useReducer } from "react";
+import { SoundState } from "@/types/sounds.types";
+import React, { createContext, useContext } from "react";
 
 type SoundContextType = {
   sounds: SoundState[];
@@ -19,9 +19,16 @@ type SoundAction =
   | { type: "APPLY_MIX_SETTINGS"; mixLevels: Record<number, number> }
   | { type: "LOAD_PRESET"; preset: SoundState[] }
   | { type: "SAVE_PRESET"; name: string }
-  | { type: "RESET_ALL" };
+  | { type: "RESET_ALL" }
+  | { type: "SELECT_SOUND"; id: number }
+  | { type: "DESELECT_SOUND"; id: number }
+  | { type: "TOGGLE_SOUND_SELECTION"; id: number }
+  | { type: "SELECT_ALL_SOUNDS" }
+  | { type: "DESELECT_ALL_SOUNDS" };
 
-const SoundContext = createContext<SoundContextType | undefined>(undefined);
+export const SoundContext = createContext<SoundContextType | undefined>(
+  undefined,
+);
 
 export const useSoundContext = () => {
   const ctx = useContext(SoundContext);
@@ -30,7 +37,7 @@ export const useSoundContext = () => {
   return ctx;
 };
 
-const soundReducer = (
+export const soundReducer = (
   state: SoundState[],
   action: SoundAction,
 ): SoundState[] => {
@@ -68,34 +75,27 @@ const soundReducer = (
       return state.map((s) => ({
         ...s,
         isPlaying: false,
-        volume: 100,
+        volume: 50,
         isMuted: false,
         mixLevel: 1,
       }));
+    case "SELECT_SOUND":
+      return state.map((s) =>
+        s.id === action.id ? { ...s, selected: true } : s,
+      );
+    case "DESELECT_SOUND":
+      return state.map((s) =>
+        s.id === action.id ? { ...s, selected: false, isPlaying: false } : s,
+      );
+    case "TOGGLE_SOUND_SELECTION":
+      return state.map((s) =>
+        s.id === action.id ? { ...s, selected: !s.selected } : s,
+      );
+    case "SELECT_ALL_SOUNDS":
+      return state.map((s) => ({ ...s, selected: true }));
+    case "DESELECT_ALL_SOUNDS":
+      return state.map((s) => ({ ...s, selected: false, isPlaying: false }));
     default:
       return state;
   }
-};
-
-export const SoundProvider: React.FC<{
-  children: ReactNode;
-  initialSounds: SoundOption[];
-}> = ({ children, initialSounds }) => {
-  const initialState: SoundState[] = initialSounds.map((s) => ({
-    id: s.id,
-    name: s.name,
-    isPlaying: false,
-    volume: 50,
-    isMuted: false,
-    mixLevel: 1,
-    presetId: undefined,
-  }));
-
-  const [sounds, dispatch] = useReducer(soundReducer, initialState);
-
-  return (
-    <SoundContext.Provider value={{ sounds, dispatch }}>
-      {children}
-    </SoundContext.Provider>
-  );
 };

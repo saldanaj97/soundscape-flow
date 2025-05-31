@@ -15,15 +15,17 @@ export const SoundSelectionSection = () => {
           <TabsTrigger value="rain"> 🌧️ Rain </TabsTrigger>
           <TabsTrigger value="nature"> 🌳 Nature </TabsTrigger>
         </TabsList>
-        <TabsContent value="noise">
-          <Sounds soundOptions={noiseSoundOptions} />
-        </TabsContent>
-        <TabsContent value="rain">
-          <Sounds soundOptions={rainSoundOptions} />
-        </TabsContent>
-        <TabsContent value="nature">
-          <Sounds soundOptions={natureSoundOptions} />
-        </TabsContent>
+        <div className="">
+          <TabsContent value="noise">
+            <Sounds soundOptions={noiseSoundOptions} />
+          </TabsContent>
+          <TabsContent value="rain">
+            <Sounds soundOptions={rainSoundOptions} />
+          </TabsContent>
+          <TabsContent value="nature">
+            <Sounds soundOptions={natureSoundOptions} />
+          </TabsContent>
+        </div>
       </Tabs>
     </section>
   );
