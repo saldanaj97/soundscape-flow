@@ -4,7 +4,7 @@ import { ModeToggle } from "../ThemeToggle";
 
 export const Header = () => {
   return (
-    <section className="flex w-full items-center justify-between text-neutral-800">
+    <section className="flex w-full items-center justify-between text-neutral-800 dark:text-neutral-300">
       <div className="flex items-center gap-2">
         {/* Logo */}
         <div className="flex h-10 w-10 items-center justify-center rounded bg-neutral-200">

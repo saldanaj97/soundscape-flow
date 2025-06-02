@@ -47,10 +47,10 @@ export const useMasterControls = () => {
     if (!hasSelectedSounds) return;
 
     if (hasPlayingSounds) {
-      dispatch({ type: "SET_ALL_PLAYING", playing: false });
+      dispatch({ type: "SET_ALL_PAUSED" });
     } else {
       selectedSounds.forEach((sound) => {
-        dispatch({ type: "TOGGLE_SOUND", id: sound.id });
+        dispatch({ type: "PLAY_SOUND", id: sound.id });
       });
     }
   };

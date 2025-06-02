@@ -8,8 +8,12 @@ export const useSoundControls = (sound: SoundOption) => {
   const volume = soundState?.volume ?? 50;
   const selected = soundState?.selected ?? false;
 
-  const handlePlayPause = () => {
-    dispatch({ type: "TOGGLE_SOUND", id: sound.id });
+  const handlePlayPause = (isPlaying: boolean) => {
+    if (isPlaying) {
+      dispatch({ type: "STOP_SOUND", id: sound.id });
+    } else {
+      dispatch({ type: "PLAY_SOUND", id: sound.id });
+    }
   };
 
   const handleVolumeChange = (value: number[]) => {
@@ -25,7 +29,11 @@ export const useSoundControls = (sound: SoundOption) => {
   };
 
   const handleSelectToggle = () => {
-    dispatch({ type: "TOGGLE_SOUND_SELECTION", id: sound.id });
+    if (selected) {
+      dispatch({ type: "DESELECT_SOUND", id: sound.id });
+    } else {
+      dispatch({ type: "SELECT_SOUND", id: sound.id });
+    }
   };
 
   return {

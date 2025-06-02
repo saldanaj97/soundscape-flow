@@ -9,9 +9,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className="min-h-screen font-sans">
+      <body className="min-h-screen font-sans backdrop-blur-3xl">
         <Providers>
-          <main>{children}</main>
+          <main className="backdrop-blur-3xl">{children}</main>
           <Toaster />
         </Providers>
       </body>

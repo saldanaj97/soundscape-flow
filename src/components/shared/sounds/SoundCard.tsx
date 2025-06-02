@@ -57,7 +57,7 @@ export const SoundCard = ({ sound }: { sound: SoundOption }) => {
               className="text-neutral-800"
               onClick={(e) => {
                 e.stopPropagation();
-                handlePlayPause();
+                handlePlayPause(playing);
               }}
               aria-label={
                 playing ? `Pause ${sound.name}` : `Play ${sound.name}`

@@ -1,4 +1,5 @@
 // hooks/useTimer.ts
+import { useSoundContext } from "@/context/SoundContext";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { toast } from "sonner";
 
@@ -15,6 +16,7 @@ interface UseTimerReturn {
 }
 
 export const useTimer = (): UseTimerReturn => {
+  const { dispatch } = useSoundContext();
   const [remainingSeconds, setRemainingSeconds] = useState(0);
   const [isRunning, setIsRunning] = useState(false);
   const [isActive, setIsActive] = useState(false);
@@ -39,8 +41,9 @@ export const useTimer = (): UseTimerReturn => {
         setRemainingSeconds((prev) => {
           if (prev <= 1) {
             setIsRunning(false);
+            dispatch({ type: "SET_ALL_PAUSED" });
             toast.success("Timer completed!", {
-              duration: 5000,
+              duration: 3000,
             });
             return 0;
           }
