@@ -19,6 +19,7 @@ fn main() {
             player::set_all_playing,
             player::set_all_paused,
             player::reset_all,
+            player::load_sound_catalog,
             // Other commands
             commands::mute_all_except,
             commands::apply_mix_settings,

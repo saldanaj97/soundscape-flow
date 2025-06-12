@@ -49,3 +49,6 @@ out/
 
 # ───── Optional: lockfiles if using a single lockfile strategy ─────
 pnpm-lock.yaml
+
+# ───── mp3 Files ─────
+src-tauri/assets/sounds/**/*.mp3

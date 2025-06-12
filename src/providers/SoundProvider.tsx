@@ -1,6 +1,9 @@
 import { SoundContext, soundReducer } from "@/context/SoundContext";
+import { loadSoundCatalog } from "@/lib/tauri/commands";
 import { SoundOption, SoundState } from "@/types/sounds.types";
-import { ReactNode, useReducer } from "react";
+import { ReactNode, useEffect, useReducer } from "react";
+
+const PATH = "../sounds.json";
 
 export const SoundProvider: React.FC<{
   children: ReactNode;
@@ -18,6 +21,20 @@ export const SoundProvider: React.FC<{
   }));
 
   const [sounds, dispatch] = useReducer(soundReducer, initialState);
+
+  // Initialize sound catalog on app startup
+  useEffect(() => {
+    const initializeSoundCatalog = async () => {
+      try {
+        await loadSoundCatalog(PATH);
+        console.log(`✅ Sound catalog loaded successfully from: ${PATH}`);
+      } catch (error) {
+        console.warn(`⚠️ Failed to load sound catalog from: ${PATH}`);
+      }
+    };
+
+    initializeSoundCatalog();
+  }, []);
 
   return (
     <SoundContext.Provider value={{ sounds, dispatch }}>

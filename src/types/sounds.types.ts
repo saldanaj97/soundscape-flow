@@ -1,3 +1,30 @@
+// Core sound data types
+export interface SoundItem {
+  id: number;
+  name: string;
+  filename: string;
+  category: string;
+}
+
+export interface SoundCatalog {
+  categories: {
+    [categoryName: string]: SoundItem[];
+  };
+}
+
+// UI-specific types
+export interface SoundTheme {
+  bgColor: string;
+  ringColor: string;
+  icon: React.ComponentType;
+}
+
+export interface CategoryTheme {
+  defaultIcon: React.ComponentType;
+  colorFamily: string;
+}
+
+// Legacy type for compatibility (deprecated)
 export type SoundOption = {
   id: number;
   name: string;
@@ -19,4 +46,4 @@ export type SoundState = {
   selected: boolean;
 };
 
-export type SoundCategory = "rain" | "nature" | "whiteNoise";
+export type SoundCategory = "rain" | "nature" | "noise" | "ambient";

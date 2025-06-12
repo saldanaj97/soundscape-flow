@@ -1,0 +1,114 @@
+{
+  "categories": {
+    "noise": [
+      {
+        "id": 1,
+        "name": "White Noise",
+        "filename": "white-noise.mp3",
+        "category": "noise"
+      },
+      {
+        "id": 2,
+        "name": "Pink Noise",
+        "filename": "pink-noise.mp3",
+        "category": "noise"
+      },
+      {
+        "id": 3,
+        "name": "Brown Noise",
+        "filename": "brown-noise.mp3",
+        "category": "noise"
+      }
+    ],
+    "rain": [
+      {
+        "id": 4,
+        "name": "Light Rain",
+        "filename": "light-rain.mp3",
+        "category": "rain"
+      },
+      {
+        "id": 5,
+        "name": "Heavy Rain",
+        "filename": "heavy-rain-storm.mp3",
+        "category": "rain"
+      },
+      {
+        "id": 6,
+        "name": "Rain on Tent",
+        "filename": "rain-on-tent.mp3",
+        "category": "rain"
+      },
+      {
+        "id": 7,
+        "name": "Rain on Window",
+        "filename": "rain-on-window.mp3",
+        "category": "rain"
+      },
+      {
+        "id": 8,
+        "name": "Rain on Leaves",
+        "filename": "rain-on-leaves.mp3",
+        "category": "rain"
+      },
+      {
+        "id": 9,
+        "name": "Thunderstorm",
+        "filename": "thunder.mp3",
+        "category": "rain"
+      }
+    ],
+    "nature": [
+      {
+        "id": 10,
+        "name": "Forest",
+        "filename": "forest.mp3",
+        "category": "nature"
+      },
+      {
+        "id": 11,
+        "name": "Ocean Waves",
+        "filename": "ocean-waves.mp3",
+        "category": "nature"
+      },
+      {
+        "id": 12,
+        "name": "Birds Chirping",
+        "filename": "birds.mp3",
+        "category": "nature"
+      },
+      {
+        "id": 13,
+        "name": "Wind in Trees",
+        "filename": "wind-in-trees.mp3",
+        "category": "nature"
+      },
+      {
+        "id": 14,
+        "name": "Nighttime Ambience",
+        "filename": "night.mp3",
+        "category": "nature"
+      },
+      {
+        "id": 15,
+        "name": "Mountain Stream",
+        "filename": "mountain-stream.mp3",
+        "category": "nature"
+      },
+      {
+        "id": 16,
+        "name": "Campfire",
+        "filename": "fire.mp3",
+        "category": "nature"
+      }
+    ],
+    "ambient": [
+      {
+        "id": 17,
+        "name": "Coffee Shop",
+        "filename": "coffee-shop.mp3",
+        "category": "ambient"
+      }
+    ]
+  }
+}
