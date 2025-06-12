@@ -26,7 +26,6 @@ src-tauri/Cargo.lock
 .DS_Store
 .idea/
 .vscode/*
-!.vscode/extensions.json
 *.suo
 *.ntvs*
 *.njsproj
