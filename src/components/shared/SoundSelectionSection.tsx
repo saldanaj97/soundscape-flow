@@ -11,7 +11,7 @@ export const SoundSelectionSection = () => {
   return (
     <section>
       <Tabs defaultValue="noise" className="flex w-full flex-col gap-4">
-        <TabsList className="grid w-full grid-cols-3">
+        <TabsList className="grid w-full grid-cols-3 inset-shadow-sm dark:inset-shadow-black/20">
           <TabsTrigger value="noise">
             <Volume2 className="mr-2" /> Noise
           </TabsTrigger>
