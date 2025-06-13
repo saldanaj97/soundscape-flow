@@ -17,12 +17,10 @@
         "titleBarStyle": "Overlay",
         "width": 800,
         "height": 600,
-        "transparent": true,
         "hiddenTitle": true,
         "shadow": true
       }
     ],
-    "macOSPrivateApi": true,
     "security": {
       "csp": null
     }

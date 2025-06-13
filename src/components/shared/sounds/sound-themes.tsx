@@ -1,5 +1,6 @@
 import type { CategoryTheme, SoundTheme } from "@/types/sounds.types";
 import {
+  AudioLines,
   Bird,
   Cloud,
   CloudLightning,
@@ -23,29 +24,29 @@ import {
 // Individual sound styling by ID
 export const soundThemes: Record<number, SoundTheme> = {
   // Noise sounds (1-3)
-  1: { bgColor: "bg-gray-200", ringColor: "ring-gray-300", icon: Volume2 },
-  2: { bgColor: "bg-pink-200", ringColor: "ring-pink-300", icon: Volume2 },
-  3: { bgColor: "bg-yellow-900", ringColor: "ring-yellow-900", icon: Volume2 },
+  1: { iconColor: "text-gray-500", ringColor: "ring-gray-500", icon: AudioLines },
+  2: { iconColor: "text-pink-300", ringColor: "ring-pink-300", icon: AudioLines },
+  3: { iconColor: "text-yellow-900", ringColor: "ring-yellow-900", icon: AudioLines },
 
   // Rain sounds (4-9)
-  4: { bgColor: "bg-blue-200", ringColor: "ring-blue-300", icon: Droplet },
-  5: { bgColor: "bg-blue-300", ringColor: "ring-blue-400", icon: Droplets },
-  6: { bgColor: "bg-blue-500", ringColor: "ring-blue-500", icon: TentTree },
-  7: { bgColor: "bg-blue-400", ringColor: "ring-blue-400", icon: Grid2X2 },
-  8: { bgColor: "bg-green-300", ringColor: "ring-green-300", icon: Leaf },
-  9: { bgColor: "bg-gray-400", ringColor: "ring-gray-500", icon: CloudLightning },
+  4: { iconColor: "text-blue-400", ringColor: "ring-blue-400", icon: Droplet },
+  5: { iconColor: "text-blue-600", ringColor: "ring-blue-600", icon: Droplets },
+  6: { iconColor: "text-blue-800", ringColor: "ring-blue-800", icon: TentTree },
+  7: { iconColor: "text-blue-900", ringColor: "ring-blue-900", icon: Grid2X2 },
+  8: { iconColor: "text-green-300", ringColor: "ring-green-300", icon: Leaf },
+  9: { iconColor: "text-yellow-500", ringColor: "ring-yellow-500", icon: CloudLightning },
 
   // Nature sounds (10-16)
-  10: { bgColor: "bg-green-800", ringColor: "ring-green-800", icon: TreePine },
-  11: { bgColor: "bg-blue-200", ringColor: "ring-blue-300", icon: Waves },
-  12: { bgColor: "bg-yellow-200", ringColor: "ring-yellow-200", icon: Bird },
-  13: { bgColor: "bg-green-300", ringColor: "ring-green-300", icon: Wind },
-  14: { bgColor: "bg-gray-600", ringColor: "ring-gray-600", icon: MoonStar },
-  15: { bgColor: "bg-blue-300", ringColor: "ring-blue-300", icon: Mountain },
-  16: { bgColor: "bg-amber-600", ringColor: "ring-amber-600", icon: FlameKindling },
+  10: { iconColor: "text-green-800", ringColor: "ring-green-800", icon: TreePine },
+  11: { iconColor: "text-blue-300", ringColor: "ring-blue-300", icon: Waves },
+  12: { iconColor: "text-yellow-200", ringColor: "ring-yellow-200", icon: Bird },
+  13: { iconColor: "text-green-300", ringColor: "ring-green-300", icon: Wind },
+  14: { iconColor: "text-gray-600", ringColor: "ring-gray-600", icon: MoonStar },
+  15: { iconColor: "text-blue-300", ringColor: "ring-blue-300", icon: Mountain },
+  16: { iconColor: "text-amber-600", ringColor: "ring-amber-600", icon: FlameKindling },
 
   // Ambient sounds (17+)
-  17: { bgColor: "bg-amber-200", ringColor: "ring-amber-300", icon: Coffee },
+  17: { iconColor: "text-amber-200", ringColor: "ring-amber-300", icon: Coffee },
 };
 
 // Category-level themes for fallbacks and new sounds
@@ -71,7 +72,7 @@ export const getSoundTheme = (
   if (category && categoryThemes[category]) {
     const categoryTheme = categoryThemes[category];
     return {
-      bgColor: `bg-${categoryTheme.colorFamily}-200`,
+      iconColor: `text-${categoryTheme.colorFamily}-200`,
       ringColor: `ring-${categoryTheme.colorFamily}-300`,
       icon: categoryTheme.defaultIcon,
     };
@@ -79,7 +80,7 @@ export const getSoundTheme = (
 
   // Default fallback
   return {
-    bgColor: "bg-gray-200",
+    iconColor: "text-gray-200",
     ringColor: "ring-gray-300",
     icon: Waves,
   };

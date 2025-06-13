@@ -35,8 +35,7 @@ export const soundToOption = (sound: SoundItem): SoundOption => {
     name: sound.name,
     status: "Paused", // Default status
     icon: createElement(IconComponent),
-    iconColor: "text-white",
-    bgColor: theme.bgColor,
+    iconColor: theme.iconColor,
     ringColor: theme.ringColor,
   };
 };

@@ -1,5 +1,6 @@
 import Sounds from "@/components/shared/sounds/Sounds";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { CloudDrizzleIcon, TreePine, Volume2 } from "lucide-react";
 import {
   natureSoundOptions,
   noiseSoundOptions,
@@ -11,11 +12,17 @@ export const SoundSelectionSection = () => {
     <section>
       <Tabs defaultValue="noise" className="flex w-full flex-col gap-4">
         <TabsList className="grid w-full grid-cols-3">
-          <TabsTrigger value="noise"> 🎨 Noise </TabsTrigger>
-          <TabsTrigger value="rain"> 🌧️ Rain </TabsTrigger>
-          <TabsTrigger value="nature"> 🌳 Nature </TabsTrigger>
+          <TabsTrigger value="noise">
+            <Volume2 className="mr-2" /> Noise
+          </TabsTrigger>
+          <TabsTrigger value="rain">
+            <CloudDrizzleIcon className="mr-2" /> Rain
+          </TabsTrigger>
+          <TabsTrigger value="nature">
+            <TreePine className="mr-2" /> Nature
+          </TabsTrigger>
         </TabsList>
-        <div className="">
+        <div>
           <TabsContent value="noise">
             <Sounds soundOptions={noiseSoundOptions} />
           </TabsContent>

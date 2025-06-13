@@ -7,12 +7,14 @@ import {
 } from "@/components/ui/card";
 import { Slider } from "@/components/ui/slider";
 import { Toggle } from "@/components/ui/toggle";
+import { useSoundContext } from "@/context/SoundContext";
 import { useSoundControls } from "@/hooks/useSoundControls";
 import { SoundOption } from "@/types/sounds.types";
 
 import { Pause, Play, Volume2, VolumeX } from "lucide-react";
 
 export const SoundCard = ({ sound }: { sound: SoundOption }) => {
+  const { sounds, dispatch } = useSoundContext();
   const {
     selected,
     playing,
@@ -21,8 +23,34 @@ export const SoundCard = ({ sound }: { sound: SoundOption }) => {
     handleVolumeChange,
     handleMuteVolume,
     handleMaxVolume,
-    handleSelectToggle,
   } = useSoundControls(sound);
+
+  // Check if any sounds are currently playing
+  const anySoundsPlaying = sounds.some((s) => s.isPlaying);
+
+  const handleSelectToggle = () => {
+    if (selected) {
+      // Deselecting: stop the sound if it's playing
+      if (playing) {
+        dispatch({ type: "STOP_SOUND", id: sound.id });
+      }
+      dispatch({ type: "DESELECT_SOUND", id: sound.id });
+    } else {
+      // Selecting: add to selection and auto-play if other sounds are playing
+      dispatch({ type: "SELECT_SOUND", id: sound.id });
+      if (anySoundsPlaying) {
+        dispatch({ type: "PLAY_SOUND", id: sound.id });
+      }
+    }
+  };
+
+  const handlePlayButtonClick = () => {
+    // Always select the sound when play is clicked
+    if (!selected) {
+      dispatch({ type: "SELECT_SOUND", id: sound.id });
+    }
+    handlePlayPause(playing);
+  };
 
   return (
     <Card
@@ -44,7 +72,7 @@ export const SoundCard = ({ sound }: { sound: SoundOption }) => {
         {/* Sound Icon and Name */}
         <div className="flex w-full items-start">
           <div
-            className={`m-auto rounded-lg p-2 ${sound.bgColor} ${sound.iconColor}`}
+            className={`m-auto rounded-lg p-2 ${sound.iconColor} dark:bg-secondary`}
           >
             {sound.icon}
           </div>
@@ -57,16 +85,16 @@ export const SoundCard = ({ sound }: { sound: SoundOption }) => {
               className="text-neutral-800"
               onClick={(e) => {
                 e.stopPropagation();
-                handlePlayPause(playing);
+                handlePlayButtonClick();
               }}
               aria-label={
                 playing ? `Pause ${sound.name}` : `Play ${sound.name}`
               }
             >
               {playing ? (
-                <Pause className="dark:text-foreground h-6 w-6" />
+                <Pause className="h-6 w-6 dark:text-white" />
               ) : (
-                <Play className="dark:text-foreground h-6 w-6" />
+                <Play className="h-6 w-6 dark:text-white" />
               )}
             </Toggle>
           </div>

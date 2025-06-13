@@ -13,8 +13,8 @@ export const MasterControls: React.FC = () => {
     masterVolume,
     selectedSounds,
     isPlaying,
-    activeSelectedCount,
     hasSelectedSounds,
+    soundsPlayingCount,
     volumeConfig,
     handlers,
   } = useMasterControls();
@@ -40,8 +40,8 @@ export const MasterControls: React.FC = () => {
 
         <ActiveSoundsSection
           selectedSounds={selectedSounds}
-          activeSelectedCount={activeSelectedCount}
           isPlaying={isPlaying}
+          soundsPlayingCount={soundsPlayingCount}
           onClearSelection={handlers.handleClearSelection}
         />
 

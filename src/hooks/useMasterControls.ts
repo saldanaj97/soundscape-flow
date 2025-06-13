@@ -24,9 +24,7 @@ export const useMasterControls = () => {
     return sounds.some((s) => s.isPlaying);
   }, [sounds]);
 
-  const activeSelectedCount = useMemo(() => {
-    return selectedSounds.filter((s) => s.isPlaying).length;
-  }, [selectedSounds]);
+  const soundsPlayingCount = sounds.filter((sound) => sound.isPlaying).length;
 
   const hasSelectedSounds = selectedSounds.length > 0;
   const hasPlayingSounds = selectedSounds.some((sound) => sound.isPlaying);
@@ -63,9 +61,8 @@ export const useMasterControls = () => {
     masterVolume,
     selectedSounds,
     isPlaying,
-    activeSelectedCount,
     hasSelectedSounds,
-    hasPlayingSounds,
+    soundsPlayingCount,
     volumeConfig: VOLUME_STEPS,
     handlers: {
       handleVolumeChange,

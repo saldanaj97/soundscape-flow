@@ -14,7 +14,7 @@ export interface SoundCatalog {
 
 // UI-specific types
 export interface SoundTheme {
-  bgColor: string;
+  iconColor: string;
   ringColor: string;
   icon: React.ComponentType;
 }
@@ -31,7 +31,6 @@ export type SoundOption = {
   status: string;
   icon: React.ReactNode;
   iconColor: string;
-  bgColor: string;
   ringColor: string;
 };
 

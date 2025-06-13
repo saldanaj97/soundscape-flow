@@ -24,8 +24,8 @@ export const Header = () => {
       {/* Settings and Theme Toggle Buttons */}
       <div className="flex items-center gap-2">
         <ModeToggle />
-        <Button variant="ghost" className="dark:text-white" size="icon">
-          <Settings size={16} />
+        <Button variant="ghost" size="icon">
+          <Settings size={16} className="text-primary" />
         </Button>
       </div>
     </section>
