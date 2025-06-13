@@ -5,11 +5,13 @@ import { Button } from "@/components/ui/button";
 interface QuickActionsSectionProps {
   onSavePreset?: () => void;
   onLoadPreset?: () => void;
+  hasSelectedSounds: boolean;
 }
 
 export const QuickActionsSection: React.FC<QuickActionsSectionProps> = ({
   onSavePreset,
   onLoadPreset,
+  hasSelectedSounds,
 }) => {
   return (
     <div className="flex w-full flex-col gap-2">
@@ -19,16 +21,11 @@ export const QuickActionsSection: React.FC<QuickActionsSectionProps> = ({
           variant="outline"
           className="flex-1"
           onClick={onSavePreset}
-          disabled={!onSavePreset}
+          disabled={!onSavePreset && !hasSelectedSounds}
         >
           Save Preset
         </Button>
-        <Button
-          variant="outline"
-          className="flex-1"
-          onClick={onLoadPreset}
-          disabled={!onLoadPreset}
-        >
+        <Button variant="outline" className="flex-1" onClick={onLoadPreset}>
           Load Preset
         </Button>
       </div>

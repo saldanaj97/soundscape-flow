@@ -28,6 +28,7 @@
     "clsx": "^2.1.1",
     "core": "link:@tauri-apps/api/core",
     "lucide-react": "^0.511.0",
+    "motion": "^12.18.1",
     "next": "^15.3.2",
     "next-themes": "^0.4.6",
     "postcss": "^8.5.4",

@@ -27,18 +27,22 @@ export const PlayPauseControl: React.FC<PlayPauseControlProps> = ({
   );
 
   return (
-    <div className="flex w-full flex-col gap-2">
-      <span className="text-sm text-neutral-500">Sound Control</span>
-      <Button
-        variant="outline"
-        className={buttonStyles}
-        onClick={onToggle}
-        disabled={!hasSelectedSounds}
-        aria-label={ariaLabel}
-      >
-        <Icon className="mr-2 h-4 w-4" />
-        {buttonText}
-      </Button>
-    </div>
+    <>
+      {(hasSelectedSounds || isPlaying) && (
+        <div className="flex w-full flex-col gap-2">
+          <span className="text-sm text-neutral-500">Sound Control</span>
+          <Button
+            variant="outline"
+            className={buttonStyles}
+            onClick={onToggle}
+            disabled={!isPlaying && !hasSelectedSounds}
+            aria-label={ariaLabel}
+          >
+            <Icon className="mr-2 h-4 w-4" />
+            {buttonText}
+          </Button>
+        </div>
+      )}
+    </>
   );
 };

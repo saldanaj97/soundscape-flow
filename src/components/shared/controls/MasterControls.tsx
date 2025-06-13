@@ -28,7 +28,7 @@ export const MasterControls: React.FC = () => {
         </h2>
       </CardHeader>
 
-      <CardContent className="flex w-full flex-col gap-6">
+      <CardContent className="flex w-full flex-col gap-2">
         <VolumeControlSection
           volume={masterVolume}
           onVolumeChange={handlers.handleVolumeChange}
@@ -51,7 +51,7 @@ export const MasterControls: React.FC = () => {
           onToggle={handlers.handlePlayPauseToggle}
         />
 
-        <QuickActionsSection />
+        <QuickActionsSection hasSelectedSounds={hasSelectedSounds} />
       </CardContent>
     </Card>
   );
