@@ -55,7 +55,7 @@ export const SoundCard = ({ sound }: { sound: SoundOption }) => {
   return (
     <Card
       key={sound.id}
-      className={`flex max-w-sm min-w-sm bg-white shadow-md transition-shadow duration-300 hover:shadow-lg ${
+      className={`flex min-w-[475px] bg-white shadow-md transition-shadow duration-300 hover:shadow-lg lg:min-w-[280px] xl:min-w-[360px] ${
         selected ? `ring-2 ${sound.ringColor}` : ""
       } cursor-pointer`}
       tabIndex={0}
